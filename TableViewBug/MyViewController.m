@@ -101,7 +101,7 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     tv.frame = self.view.frame;
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:5];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:5];
 //    [tv scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
