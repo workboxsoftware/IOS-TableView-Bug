@@ -22,6 +22,8 @@
 		C4AFCAB018DB8A880037DD1F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4AFCA9418DB8A880037DD1F /* CoreData.framework */; };
 		C4AFCAB818DB8A880037DD1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4AFCAB618DB8A880037DD1F /* InfoPlist.strings */; };
 		C4AFCABA18DB8A880037DD1F /* TableViewBugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFCAB918DB8A880037DD1F /* TableViewBugTests.m */; };
+		C4AFCAC918DB8D480037DD1F /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFCAC818DB8D480037DD1F /* MyViewController.m */; };
+		C4AFCACC18DB97120037DD1F /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFCACB18DB97120037DD1F /* City.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		C4AFCAB518DB8A880037DD1F /* TableViewBugTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableViewBugTests-Info.plist"; sourceTree = "<group>"; };
 		C4AFCAB718DB8A880037DD1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4AFCAB918DB8A880037DD1F /* TableViewBugTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewBugTests.m; sourceTree = "<group>"; };
+		C4AFCAC718DB8D480037DD1F /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		C4AFCAC818DB8D480037DD1F /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		C4AFCACA18DB97120037DD1F /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		C4AFCACB18DB97120037DD1F /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 		C4AFCA8218DB8A880037DD1F = {
 			isa = PBXGroup;
 			children = (
+				C4AFCAC318DB8ABF0037DD1F /* Managed Objects */,
 				C4AFCA9618DB8A880037DD1F /* TableViewBug */,
 				C4AFCAB318DB8A880037DD1F /* TableViewBugTests */,
 				C4AFCA8D18DB8A880037DD1F /* Frameworks */,
@@ -120,6 +127,8 @@
 				C4AFCAA518DB8A880037DD1F /* Images.xcassets */,
 				C4AFCAA218DB8A880037DD1F /* TableViewBug.xcdatamodeld */,
 				C4AFCA9718DB8A880037DD1F /* Supporting Files */,
+				C4AFCAC718DB8D480037DD1F /* MyViewController.h */,
+				C4AFCAC818DB8D480037DD1F /* MyViewController.m */,
 			);
 			path = TableViewBug;
 			sourceTree = "<group>";
@@ -151,6 +160,15 @@
 				C4AFCAB618DB8A880037DD1F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4AFCAC318DB8ABF0037DD1F /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C4AFCACA18DB97120037DD1F /* City.h */,
+				C4AFCACB18DB97120037DD1F /* City.m */,
+			);
+			name = "Managed Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AFCACC18DB97120037DD1F /* City.m in Sources */,
 				C4AFCAA118DB8A880037DD1F /* AppDelegate.m in Sources */,
 				C4AFCAA418DB8A880037DD1F /* TableViewBug.xcdatamodeld in Sources */,
 				C4AFCA9D18DB8A880037DD1F /* main.m in Sources */,
+				C4AFCAC918DB8D480037DD1F /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
