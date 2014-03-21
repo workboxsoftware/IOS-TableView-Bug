@@ -105,6 +105,19 @@
 //    [tv scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:5];
+    [tv scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    City *city;
+    city = [frc objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
+    [moc deleteObject:city];
+    city = [frc objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    [moc deleteObject:city];
+    city = [frc objectAtIndexPath:[NSIndexPath indexPathForRow:9 inSection:0]];
+    [moc deleteObject:city];
+    
+}
 -(NSString *) title {
     return @"Test Core Data Delete with tableview";
 }
