@@ -22,14 +22,6 @@
 
 @implementation MyViewController
 
-//
-//  DatabaseSelectionController.m
-//  WorkBox
-//
-//  Created by Glass Bob on 10/18/12.
-//  Copyright (c) 2012 com.workbox. All rights reserved.
-//
-
 
 
 -(id) initWithMOC:(NSManagedObjectContext *)inMoc {
