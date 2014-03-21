@@ -42,6 +42,8 @@
 }
 
 -(void) housekeeping {
+    
+    // delete existing objects
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:CITY inManagedObjectContext:moc];
     [fetchRequest setEntity:entity];
@@ -49,23 +51,26 @@
     NSError *error;
     NSArray *items = [moc executeFetchRequest:fetchRequest error:&error];
     
-    
     for (NSManagedObject *managedObject in items) {
     	[moc deleteObject:managedObject];
     }
     if (![moc save:&error]) {
     	NSLog(@"Delete error");
     }
+    
+    
+    // create new objects
     cities = [NSArray arrayWithObjects:@"US/New York", @"US/San Francisco", @"US/Austin", @"US/Albany", @"US/Teaneck", @"US/LA", @"US/Phoenix", @"US/Toledo", @"US/Troy", @"Italy/Rome", @"Switzerland/Geneva", @"France/Paris", @"Japan/Tokyo", @"Russia/Moscow", nil];
     
     for (NSString *name in cities) {
         City *city = [NSEntityDescription insertNewObjectForEntityForName:@"City" inManagedObjectContext:moc];
         NSArray *array = [name componentsSeparatedByString: @"/"];
-    
         city.country = [array objectAtIndex:0];
         city.name = [array objectAtIndex:1];
     }
     
+    
+    // create frc
     NSSortDescriptor *sd1 = [[NSSortDescriptor alloc] initWithKey:@"country" ascending:NO];
     NSSortDescriptor *sd2 = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sd1, sd2, nil];
@@ -101,10 +106,10 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     tv.frame = self.view.frame;
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:5];
-//    [tv scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
+// now scroll down and delete some objects in the middle of the screen
+// forcing the tv bottom to start moving up.
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:5];
@@ -114,7 +119,7 @@
     [moc deleteObject:city];
     city = [frc objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [moc deleteObject:city];
-    city = [frc objectAtIndexPath:[NSIndexPath indexPathForRow:9 inSection:0]];
+    city = [frc objectAtIndexPath:[NSIndexPath indexPathForRow:8 inSection:0]];
     [moc deleteObject:city];
     
 }
